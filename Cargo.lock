@@ -122,7 +122,6 @@ version = "0.1.0"
 dependencies = [
  "ctru-rs",
  "embedded-graphics",
- "embedded-graphics-core",
 ]
 
 [[package]]

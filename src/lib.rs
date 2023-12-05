@@ -1,8 +1,8 @@
 use ctru::prelude::*;
 use ctru::services::gfx::{self, Flush, Screen, Swap};
 use ctru::services::gspgpu::FramebufferFormat;
-use embedded_graphics_core::pixelcolor;
-use embedded_graphics_core::prelude::*;
+use embedded_graphics::pixelcolor;
+use embedded_graphics::prelude::*;
 use std::cell::RefMut;
 use std::convert::Infallible;
 use std::marker::PhantomData;
@@ -81,7 +81,7 @@ fn rotate_90(x: i32, y: i32, width: usize, _height: usize) -> (i32, i32) {
 
 impl<'gfx, S: gfx::Screen + gfx::Swap, const WIDE: bool> DrawTarget for CtrDisplay<'gfx, S, WIDE>
 where
-    CtrDisplay<'gfx, S, WIDE>: embedded_graphics_core::geometry::OriginDimensions,
+    CtrDisplay<'gfx, S, WIDE>: embedded_graphics::geometry::OriginDimensions,
 {
     type Color = pixelcolor::Bgr888;
     type Error = Infallible;
